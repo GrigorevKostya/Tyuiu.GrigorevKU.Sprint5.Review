@@ -17,5 +17,15 @@ namespace Tyuiu.GrigorevKU.Sprint5.TaskReview.V20.Test
             bool wait = true;
             Assert.AreEqual(wait, fileExists);
         }
+        [TestMethod]
+        public void ValidCalc()
+        {
+            DataService ds = new DataService();
+            string strline = "Ссловарные сслова сс удвоенной ссогласной нн";
+            string res = ds.Calculate(strline);
+            string wait = "Ссловарные слова с удвоенной согласной нн";
+            Assert.AreEqual(wait, res);
+        }
+
     }
 }

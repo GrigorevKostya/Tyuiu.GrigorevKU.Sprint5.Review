@@ -28,7 +28,7 @@ namespace Tyuiu.GrigorevKU.Sprint5.TaskReview.V20.Lib
                 {
                     for (int i = 0; i < line.Length - 1; i++)
                     {
-                        if (((line[i] == 'с') & (line[i + 1] == 'с')) | ((line[i] == 'С') & (line[i + 1] == 'с')) | ((line[i] == 'С') & (line[i + 1] == 'С')) | ((line[i] == 'с') & (line[i + 1] == 'С')))
+                        if (((line[i] == 'с') & (line[i + 1] == 'с')))
                         {
                             line.Remove(i, 1);
                         }
@@ -43,6 +43,21 @@ namespace Tyuiu.GrigorevKU.Sprint5.TaskReview.V20.Lib
                 }
                 return pathSaverFile;
             }
+        }
+        public string Calculate(string line)
+        {
+
+            string strLine = "";
+            for (int i = 0; i < line.Length - 1; i++)
+            {
+                if ((((line[i] == 'с') & (line[i + 1] == 'с'))) == false)
+                {
+                    strLine = strLine + line[i];
+                }
+            }
+            strLine = strLine + line.Substring(line.Length - 1);
+            return strLine;
+
         }
     }
 }
